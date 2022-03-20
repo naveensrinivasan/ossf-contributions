@@ -1,4 +1,4 @@
-## Pull Requests Reviewed by Naveen Srinivasan for Feb
+## Pull Requests Reviewed by Naveen Srinivasan for March
 | # | Title | URL |
 | --- | --- | --- |
 | 1 | :seedling: Bump actions/setup-go from 2.2.0 to 3 | https://github.com/ossf/scorecard-action/pull/124 |
@@ -54,7 +54,7 @@
 | 51 | Do not parse non-dockerfile | https://github.com/ossf/scorecard/pull/1583 |
 | 52 | :seedling: Bump ossf/scorecard-action from 1.0.2 to 1.0.3 | https://github.com/ossf/scorecard/pull/1577 |
 
-## Pull Requests Created by Naveen Srinivasan for Feb
+## Pull Requests Created by Naveen Srinivasan for March
 | # | Title | URL |
 | --- | --- | --- |
 | 1 | :sparkles: Changed jsonScorecardResultV2 type Public | https://github.com/ossf/scorecard/pull/1682 |
@@ -88,7 +88,7 @@
 | 29 | :seedling: Unit tests for Vulnerabilities | https://github.com/ossf/scorecard/pull/1589 |
 | 30 | :seedling: Unit tests for vulnerabilities raw package | https://github.com/ossf/scorecard/pull/1581 |
 
-## Issues Created by Naveen Srinivasan for Feb
+## Issues Created by Naveen Srinivasan for March
 | # | Title | URL |
 | --- | --- | --- |
 | 1 | BUG - Fix golang CI issues | https://github.com/ossf/scorecard/issues/1659 |
