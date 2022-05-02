@@ -58,7 +58,7 @@ func main() {
 	query := `
 {
   search(
-    query: "is:public  reviewed-by:naveensrinivasan created:2022-01-01..2022-01-31 user:ossf"
+    query: "is:public  reviewed-by:naveensrinivasan created:2022-03-01..2022-03-30 user:ossf"
     type: ISSUE
     first: 100
   ) {
@@ -80,7 +80,7 @@ func main() {
 `
 	prs := `
 {
-  search(query: "is:pr is:public archived:false author:naveensrinivasan user:ossf created:2022-01-01..2022-01-31", type: ISSUE, first: 100) {
+  search(query: "is:pr is:public archived:false author:naveensrinivasan user:ossf created:2022-03-01..2022-03-30", type: ISSUE, first: 100) {
     issueCount
     edges {
       node {
@@ -94,7 +94,7 @@ func main() {
   }
 }
 `
-	clientsFile, err := os.OpenFile("jan.md", os.O_RDWR|os.O_CREATE, os.ModePerm)
+	clientsFile, err := os.OpenFile("april.md", os.O_RDWR|os.O_CREATE, os.ModePerm)
 	if err != nil {
 		panic(err)
 	}
@@ -121,7 +121,7 @@ func main() {
 	}
 	fmt.Fprintf(clientsFile, "\n")
 
-	issues := getIssuesCreated("user:ossf created:2022-01-01..2022-01-31 author:naveensrinivasan is:issue", os.Getenv("GITHUB_TOKEN"))
+	issues := getIssuesCreated("user:ossf created:2022-03-01..2022-03-30 author:naveensrinivasan is:issue", os.Getenv("GITHUB_TOKEN"))
 	fmt.Fprintf(clientsFile, "## Issues Created by Naveen Srinivasan for Jan\n")
 	fmt.Fprintf(clientsFile, "| # | Title | URL |\n")
 	fmt.Fprintf(clientsFile, "| --- | --- | --- |\n")
