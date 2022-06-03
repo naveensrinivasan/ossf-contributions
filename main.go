@@ -58,7 +58,7 @@ func main() {
 	query := `
 {
   search(
-    query: "is:public  reviewed-by:naveensrinivasan created:2022-03-01..2022-03-30 user:ossf"
+    query: "is:public  reviewed-by:naveensrinivasan created:2022-04-01..2022-04-30 user:ossf"
     type: ISSUE
     first: 100
   ) {
@@ -80,7 +80,7 @@ func main() {
 `
 	prs := `
 {
-  search(query: "is:pr is:public archived:false author:naveensrinivasan user:ossf created:2022-03-01..2022-03-30", type: ISSUE, first: 100) {
+  search(query: "is:pr is:public archived:false author:naveensrinivasan user:ossf created:2022-04-01..2022-04-30", type: ISSUE, first: 100) {
     issueCount
     edges {
       node {
@@ -121,7 +121,7 @@ func main() {
 	}
 	fmt.Fprintf(clientsFile, "\n")
 
-	issues := getIssuesCreated("user:ossf created:2022-03-01..2022-03-30 author:naveensrinivasan is:issue", os.Getenv("GITHUB_TOKEN"))
+	issues := getIssuesCreated("user:ossf created:2022-04-01..2022-04-30 author:naveensrinivasan is:issue", os.Getenv("GITHUB_TOKEN"))
 	fmt.Fprintf(clientsFile, "## Issues Created by Naveen Srinivasan for Jan\n")
 	fmt.Fprintf(clientsFile, "| # | Title | URL |\n")
 	fmt.Fprintf(clientsFile, "| --- | --- | --- |\n")
