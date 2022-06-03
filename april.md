@@ -121,4 +121,3 @@
 | 17 | Scorecard action fails - private repo with 0 commits | https://github.com/ossf/scorecard-action/issues/134 |
 | 18 | Run all star across OSSF | https://github.com/ossf/.github/issues/1 |
 | 19 | Extend Vulnerabilities check with https://github.com/github/advisory-database | https://github.com/ossf/scorecard/issues/1707 |
-
