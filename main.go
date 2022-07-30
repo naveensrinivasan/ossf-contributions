@@ -58,7 +58,7 @@ func main() {
 	query := `
 {
   search(
-    query: "is:public  reviewed-by:naveensrinivasan created:2022-05-01..2022-05-30 user:ossf"
+    query: "is:public  reviewed-by:naveensrinivasan created:2022-07-01..2022-07-30 user:ossf"
     type: ISSUE
     first: 100
   ) {
@@ -80,7 +80,7 @@ func main() {
 `
 	prs := `
 {
-  search(query: "is:pr is:public archived:false author:naveensrinivasan user:ossf created:2022-05-01..2022-05-30", type: ISSUE, first: 100) {
+  search(query: "is:pr is:public archived:false author:naveensrinivasan user:ossf created:2022-07-01..2022-07-30", type: ISSUE, first: 100) {
     issueCount
     edges {
       node {
@@ -94,7 +94,7 @@ func main() {
   }
 }
 `
-	clientsFile, err := os.OpenFile("april.md", os.O_RDWR|os.O_CREATE, os.ModePerm)
+	clientsFile, err := os.OpenFile("2022-07.md", os.O_RDWR|os.O_CREATE, os.ModePerm)
 	if err != nil {
 		panic(err)
 	}
@@ -102,7 +102,7 @@ func main() {
 
 	r := getPullRequestReviewed(query, os.Getenv("GITHUB_TOKEN"))
 	// write to file mark down header pull requests reviewed by naveen for Feb
-	fmt.Fprintf(clientsFile, "## Pull Requests Reviewed by Naveen Srinivasan for Jan\n")
+	fmt.Fprintf(clientsFile, "## Pull Requests Reviewed by Naveen Srinivasan for July\n")
 	// include a counter
 	fmt.Fprintf(clientsFile, "| # | Title | URL |\n")
 	fmt.Fprintf(clientsFile, "| --- | --- | --- |\n")
@@ -112,7 +112,7 @@ func main() {
 	fmt.Fprintf(clientsFile, "\n")
 
 	// write to file mark down header pull requests created by naveen for Feb
-	fmt.Fprintf(clientsFile, "## Pull Requests Created by Naveen Srinivasan for Jan\n")
+	fmt.Fprintf(clientsFile, "## Pull Requests Created by Naveen Srinivasan for July\n")
 	fmt.Fprintf(clientsFile, "| # | Title | URL |\n")
 	fmt.Fprintf(clientsFile, "| --- | --- | --- |\n")
 	prsCreated := getPullRequestCreated(prs, os.Getenv("GITHUB_TOKEN"))
@@ -121,8 +121,8 @@ func main() {
 	}
 	fmt.Fprintf(clientsFile, "\n")
 
-	issues := getIssuesCreated("user:ossf created:2022-05-01..2022-05-30 author:naveensrinivasan is:issue", os.Getenv("GITHUB_TOKEN"))
-	fmt.Fprintf(clientsFile, "## Issues Created by Naveen Srinivasan for Jan\n")
+	issues := getIssuesCreated("user:ossf created:2022-07-01..2022-07-30 author:naveensrinivasan is:issue", os.Getenv("GITHUB_TOKEN"))
+	fmt.Fprintf(clientsFile, "## Issues Created by Naveen Srinivasan for July\n")
 	fmt.Fprintf(clientsFile, "| # | Title | URL |\n")
 	fmt.Fprintf(clientsFile, "| --- | --- | --- |\n")
 	for i, issue := range issues {
